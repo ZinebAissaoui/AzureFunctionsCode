@@ -23,7 +23,7 @@ def blob_trigger_convention(myblob0: func.InputStream):
     logging.info(f"Python blob trigger function processed blob"
                 f"Name: {myblob0.name}"
                 f"Blob Size: {myblob0.length} bytes")
-    connection="DefaultEndpointsProtocol=https;AccountName=projetlinkedin;AccountKey=aPmSxIZNbVSqMr7Q7EI68FbSKteJBNegSiKgj2tAuMB9PCoMiXt/M3QUv5vjRNiUtGsarEOyCiYB+AStyVxeHw==;EndpointSuffix=core.windows.net"
+    connection="key"
     blob_service_client = BlobServiceClient.from_connection_string(connection)
     container_client = ContainerClient.from_connection_string(connection, container_name="segmentation")
     myblob_name=str(myblob0.name)
@@ -80,7 +80,7 @@ def blob_trigger_segmentation(myblob: func.InputStream):
                 f"Name: {myblob.name}"
                 f"Blob Size: {myblob.length}")
 
-    connection = "DefaultEndpointsProtocol=https;AccountName=projetlinkedin;AccountKey=Rg3sTTpphZRUZXYYglp0q44e0y8rH91ady6RlZi3ZhixxZYS6cWk4T3XPYFDNB/dy0FNGxfifCHW+ASt40ET8w==;EndpointSuffix=core.windows.net"
+    connection = "key"
     blob_service_client = BlobServiceClient.from_connection_string(connection)
     container_name = "segmentation"
     blob_name = myblob.name.split('segmentation/')[1]
@@ -152,7 +152,7 @@ def blob_trigger_generation_email(myblob5: func.InputStream):
 
                 f"Blob Size: {myblob5.length} bytes")
 
-    connection = "DefaultEndpointsProtocol=https;AccountName=projetlinkedin;AccountKey=Rg3sTTpphZRUZXYYglp0q44e0y8rH91ady6RlZi3ZhixxZYS6cWk4T3XPYFDNB/dy0FNGxfifCHW+ASt40ET8w==;EndpointSuffix=core.windows.net"
+    connection = "key"
 
     blob_service_client = BlobServiceClient.from_connection_string(connection)
 
@@ -196,7 +196,7 @@ def blob_triggertestscrap(myblob6: func.InputStream):
     logging.info(f"Python blob trigger function processed blob"
                 f"Name: {myblob6.name}"
                 f"Blob Size: {myblob6.length} bytes")
-    connection = "DefaultEndpointsProtocol=https;AccountName=projetlinkedin;AccountKey=Rg3sTTpphZRUZXYYglp0q44e0y8rH91ady6RlZi3ZhixxZYS6cWk4T3XPYFDNB/dy0FNGxfifCHW+ASt40ET8w==;EndpointSuffix=core.windows.net"
+    connection = "key"
     blob_service_client = BlobServiceClient.from_connection_string(connection)
 
     container_name = "segmentation"
